@@ -13,7 +13,7 @@ public:
 // Constructor (using the constructor of Character)
     // Parameterized
     // Adding health and speed because we got 3 differents type of Ninja
-    Ninja(Point& location,int health,string& name,int speed);
+    Ninja(string name,Point location,int health,int speed);
 
 // Function for a Ninja
 /*
@@ -40,7 +40,7 @@ public:
     // Parameterized
     // Using the constructor of Ninja
     // Missing the health and speed because we know their values : speed = 14 / health = 100
-    YoungNinja(Point& location,string& name);
+    YoungNinja(string name,Point location);
 
     };
 
@@ -50,7 +50,7 @@ public:
     // Parameterized
     // Using the constructor of Ninja
     // Missing the health and speed because we know their values : speed = 12 / health = 120
-    TrainedNinja(Point& location,string& name);
+    TrainedNinja(string name,Point location);
 
     };
 
@@ -60,7 +60,7 @@ public:
     // Parameterized
     // Using the constructor of Ninja
     // Missing the health and speed because we know their values : speed = 8 / health = 150
-    OldNinja(Point& location,string& name);
+    OldNinja(string name,Point location);
 
     };
 

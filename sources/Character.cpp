@@ -3,7 +3,7 @@
 using namespace std;
 using namespace ariel;
 
-Character::Character(Point& location,int health,string& name): location(location),health(health),name(name),inTeam(false){}
+Character::Character(string name,Point location,int health): location(location),health(health),name(name),inTeam(false){}
 
 bool Character::isAlive() const{
     return true;

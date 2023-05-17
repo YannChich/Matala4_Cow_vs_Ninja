@@ -19,7 +19,7 @@ protected: // Data should be accessible by subclasses only are declared as prote
 public: 
 // Constructor
     // Parameterized
-    Character(Point& location,int healht,string& name);
+    Character(string name,Point location,int healht);
 
 // Differents function that every type of Character going to share
 

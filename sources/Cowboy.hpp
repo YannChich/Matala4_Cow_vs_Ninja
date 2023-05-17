@@ -13,7 +13,7 @@ public :
 // Constructor (using the constructor of Character)
     // Parameterized
     // Missing health and bullets because we know their value healt = 110 / bullet = 6
-    Cowboy(Point& location,string& name);
+    Cowboy(string name,Point location);
 
 // Function for a Cowboy
 /*

@@ -3,7 +3,7 @@
 using namespace std;
 using namespace ariel;
 
-Cowboy::Cowboy(Point& location,string& name):Character(location,110,name),bullets(6){};
+Cowboy::Cowboy(string name,Point location):Character(name,location,110),bullets(6){};
 
 void Cowboy::shoot(Character* enemy){
     return;
