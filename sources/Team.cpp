@@ -48,6 +48,14 @@ int Team::getSizeTeam() const{
     return this->size;
 }
 
+vector<Character*> Team::getVector() const{
+    return this->team;
+}
+
+Character* Team::getLeader() const{
+    return this->Leader;
+}
+
 // Part of Team2
 
 Team2::Team2(Character* Leader): Team(Leader){}

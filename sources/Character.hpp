@@ -10,7 +10,7 @@ namespace ariel{
 
 class Character{
 
-protected: // Data should be accessible by subclasses only are declared as protected
+private: // Data should be accessible by subclasses only are declared as protected
     Point location;
     int health;
     string name;
@@ -20,6 +20,17 @@ public:
 // Constructor
     // Parameterized
     Character(string name,Point location,int healht);
+// Destructor
+    virtual ~Character() = default;
+
+// To supp. the error from tidy about copy constructor , copy operator , move constructor and move operator :
+    // Deleted copy constructor and copy assignment operator
+    Character(const Character&) = delete;
+    Character& operator=(const Character&) = delete;
+
+    // Deleted move constructor and move assignment operator
+    Character(Character&&) = delete;
+    Character& operator=(Character&&) = delete;
 
 // Differents function that every type of Character going to share
 

@@ -40,6 +40,6 @@ public :
 -This function is the override of the virtual function of the Character
 -The function print the detail of a Character and add C before the Print
 */
-    virtual string print()const override;
+     string print()const override;
     };
 }

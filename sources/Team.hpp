@@ -9,7 +9,7 @@ using namespace std;
 namespace ariel{
 
 class Team{
-protected:
+private:
 // Data of a Team 
     vector<Character*> team;
     int size;
@@ -40,6 +40,16 @@ Destructor for the Team (using new in the Demo)
 The destructor going to be virtual because Team2 and SmartTeam implement Team
 */
     virtual ~Team();
+
+
+// To supp. the error from Tidy
+    // Deleted copy constructor and copy assignment operator
+    Team(const Team&) = delete;
+    Team& operator=(const Team&) = delete;
+
+    // Deleted move constructor and move assignment operator
+    Team(Team&&) = delete;
+    Team& operator=(Team&&) = delete;
 /*
 This function add a new Character to the Team
 We need to adjust the size of the Team 
@@ -67,10 +77,17 @@ I will add the Char : T before to know that i'm printing a Team
 */
     virtual string print() const;
 
+// Getter for the private data
 /*
 This function going to return the size of a Team
 */
     int getSizeTeam() const;
+
+// Getter for the vector
+    vector<Character*> getVector() const;
+
+// Getter for the leader
+    Character* getLeader() const;
 };
 
 class Team2:public Team{
@@ -83,10 +100,10 @@ This function is the principal function of Team2.
 We are keeping the same Exception from Team but the way of the attack is different
 How is the attack : The order is base on the entry of the Character and not Type.
 */
-    virtual void attack(Team* EnemyTeam) override;
+    void attack(Team* EnemyTeam) override;
 
 // I'm going to add T2 before the print
-    virtual string print() const override;
+    string print() const override;
 };
 
 
@@ -100,10 +117,10 @@ This function is the principal function of SmartTeam.
 We are keeping the same Exception from Team but the way of the attack is different
 How is the attack : You will see in the PartB
 */
-    virtual void attack(Team* EnemyTeam) override;
+    void attack(Team* EnemyTeam) override;
 
 // I'm going to add ST before the print
-    virtual string print() const override;
+    string print() const override;
 };
 
 }

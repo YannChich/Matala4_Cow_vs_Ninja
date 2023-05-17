@@ -5,7 +5,7 @@ using namespace std;
 namespace ariel{
 
 class Ninja:public Character{ // our class Ninja implement the class Character
-protected:
+private:
 // Data of a Ninja
     int Speed;
 
@@ -31,7 +31,10 @@ public:
 -This function is the override of the virtual function of the Character
 -The function print the detail of a Character and add C before the Print
 */
-    virtual string print()const override;
+    string print()const override;
+
+// Getter for the private data
+    int getSpeed() const;
     };
 
 class YoungNinja:public Ninja{ // our class YoungNinja implement the class Ninja
