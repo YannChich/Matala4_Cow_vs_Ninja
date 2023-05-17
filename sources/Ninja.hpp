@@ -4,10 +4,10 @@
 using namespace std;
 namespace ariel{
 
-class Ninja:public Character{ // our class Cowboy implement the class Character
-private:
+class Ninja:public Character{ // our class Ninja implement the class Character
+protected:
 // Data of a Ninja
-    int speed;
+    int Speed;
 
 public:
 // Constructor (using the constructor of Character)
@@ -19,18 +19,49 @@ public:
 /*
 -This function move on our game the ninja to the enemy.(use the function moveToward of Class::Point)
 */
-    void speed(Character* enemy);
+    void move(Character* enemy);
 
 /*
 -This function going to represent the action of the Ninja : slash someone
 -Exception : if the enemy is not a meter away , there is no damage
 -Damage of slash : -40HP
 */
-
+    void slash(Character* enemy);
 /*
 -This function is the override of the virtual function of the Character
 -The function print the detail of a Character and add C before the Print
 */
     virtual string print()const override;
-    }
+    };
+
+class YoungNinja:public Ninja{ // our class YoungNinja implement the class Ninja
+public:
+// Constructor (using the constructor of Character)
+    // Parameterized
+    // Using the constructor of Ninja
+    // Missing the health and speed because we know their values : speed = 14 / health = 100
+    YoungNinja(Point& location,string& name);
+
+    };
+
+class TrainedNinja:public Ninja{ // our class YoungNinja implement the class Ninja
+public:
+// Constructor (using the constructor of Character)
+    // Parameterized
+    // Using the constructor of Ninja
+    // Missing the health and speed because we know their values : speed = 12 / health = 120
+    TrainedNinja(Point& location,string& name);
+
+    };
+
+class OldNinja:public Ninja{ // our class YoungNinja implement the class Ninja
+public:
+// Constructor (using the constructor of Character)
+    // Parameterized
+    // Using the constructor of Ninja
+    // Missing the health and speed because we know their values : speed = 8 / health = 150
+    OldNinja(Point& location,string& name);
+
+    };
+
 }
