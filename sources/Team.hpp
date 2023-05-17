@@ -1,6 +1,8 @@
+#include "Character.hpp"
 #include "Cowboy.hpp"
 #include "Ninja.hpp"
 #include <vector>
+#include <string>
 
 using namespace std;
 
@@ -61,6 +63,7 @@ This function going to return the number of TeamMate alive in a Team
 
 /*
 This function going to print every member of the Team by using they print function
+I will add the Char : T before to know that i'm printing a Team 
 */
     virtual string print() const;
 
@@ -71,6 +74,36 @@ This function going to return the size of a Team
 };
 
 class Team2:public Team{
-    
-}
+public: // Going to have the constructor , the function attack and the function print
+
+    Team2(Character* Leader);
+
+/*
+This function is the principal function of Team2.
+We are keeping the same Exception from Team but the way of the attack is different
+How is the attack : The order is base on the entry of the Character and not Type.
+*/
+    virtual void attack(Team* EnemyTeam) override;
+
+// I'm going to add T2 before the print
+    virtual string print() const override;
+};
+
+
+class SmartTeam:public Team{
+public: // Going to have the constructor , the function attack and the function print
+
+    SmartTeam(Character* Leader);
+
+/*
+This function is the principal function of SmartTeam.
+We are keeping the same Exception from Team but the way of the attack is different
+How is the attack : You will see in the PartB
+*/
+    virtual void attack(Team* EnemyTeam) override;
+
+// I'm going to add ST before the print
+    virtual string print() const override;
+};
+
 }
