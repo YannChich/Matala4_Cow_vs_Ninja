@@ -11,7 +11,9 @@ private :
 
 public :
 // Constructor (using the constructor of Character)
-    Cowboy(Point& location,string& name); // Missing health and bullets because we know their value healt = 110 / bullet = 6
+    // Parameterized
+    // Missing health and bullets because we know their value healt = 110 / bullet = 6
+    Cowboy(Point& location,string& name);
 
 // Function for a Cowboy
 /*
